@@ -1,6 +1,6 @@
 # API regression (JSONPlaceholder)
 
-接口回归练习：用 Pytest + Requests 测公开 API，后续挂 GitHub Actions。
+基于 Pytest 与 Requests 的公开 API 接口回归套件，目标环境为 JSONPlaceholder，并在 GitHub Actions 中持续运行。
 
 ## 测什么
 
@@ -24,11 +24,11 @@ pytest
 
 ## CI
 
-工作流已在 `.github/workflows/pytest.yml`（push / PR 跑 pytest）。公开仓推上去后，在 Actions 页能看到运行记录；需要的话再补徽章链接。
+工作流在 `.github/workflows/pytest.yml`：push 与 pull request 时安装依赖并执行 `pytest -q`。运行记录在仓库 **Actions** 页查看。
 
-## AI 辅助用例（差异化）
+## AI 辅助用例评审
 
-见 [`docs/ai-case-review.md`](docs/ai-case-review.md)：12 条 AI 草稿 → 人工评审，采纳率 3/12（25%）。保留/修改的已落成自动化；丢弃项写了理由，避免把「期望 4xx」硬套到不校验的演示 API 上。
+见 [`docs/ai-case-review.md`](docs/ai-case-review.md)：12 条 AI 草稿经人工对照真实 API 行为评审，采纳 3/12（25%）。保留与修改项已写入自动化；丢弃项记录理由，避免对不校验入参的演示 API 硬套「期望 4xx」。
 
 ## 结论 / 限制
 
